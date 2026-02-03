@@ -1,0 +1,589 @@
+/* 全局样式重置：清除所有元素的默认边距和内边距，确保在不同浏览器中显示一致 */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box：使元素的宽度和高度包含内边距和边框，简化布局计算 */
+    box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+    /* 设置字体：优先使用微软雅黑，其次是Arial，最后是sans-serif通用字体 */
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    /* 设置背景颜色：使用浅灰色背景，提高内容可读性 */
+    background-color: #f5f7fa;
+    /* 设置文本颜色：使用深灰色文本，提高可读性 */
+    color: #333;
+    /* 设置行高：1.6倍行高，提高文本可读性 */
+    line-height: 1.6;
+}
+
+/* 容器样式：限制页面内容的最大宽度并居中显示 */
+.container {
+    /* 设置最大宽度：1200像素，适配大部分桌面屏幕 */
+    max-width: 1200px;
+    /* 水平居中：左右margin设为auto */
+    margin: 0 auto;
+    /* 设置内边距：20像素，使内容与边缘有一定距离 */
+    padding: 20px;
+}
+
+/* 头部样式：页面顶部的标题区域 */
+header {
+    /* 设置背景：使用渐变色背景，从#667eea到#764ba2 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 设置文本颜色：白色 */
+    color: white;
+    /* 设置内边距：上下30像素，左右0 */
+    padding: 30px 0;
+    /* 设置底部外边距：30像素，与下方内容保持距离 */
+    margin-bottom: 30px;
+    /* 设置圆角：10像素，使边角更柔和 */
+    border-radius: 10px;
+    /* 设置阴影：添加轻微的阴影效果，增加层次感 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 头部内容样式：限制头部内容的最大宽度并居中 */
+.header-content {
+    /* 设置最大宽度：1200像素 */
+    max-width: 1200px;
+    /* 水平居中 */
+    margin: 0 auto;
+    /* 设置内边距：左右20像素 */
+    padding: 0 20px;
+}
+
+/* 主标题样式 */
+h1 {
+    /* 设置字体大小：2.5rem（相对于根元素的字体大小） */
+    font-size: 2.5rem;
+    /* 设置底部外边距：10像素 */
+    margin-bottom: 10px;
+    /* 设置文本对齐：居中 */
+    text-align: center;
+}
+
+/* 副标题样式 */
+.subtitle {
+    /* 设置字体大小：1.2rem */
+    font-size: 1.2rem;
+    /* 设置文本对齐：居中 */
+    text-align: center;
+    /* 设置不透明度：0.9，使文字稍微透明 */
+    opacity: 0.9;
+}
+
+/* 搜索区域样式：包含搜索框和筛选选项 */
+.search-section {
+    /* 设置背景颜色：白色 */
+    background: white;
+    /* 设置内边距：30像素 */
+    padding: 30px;
+    /* 设置圆角：10像素 */
+    border-radius: 10px;
+    /* 设置阴影：轻微阴影效果 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* 设置底部外边距：30像素 */
+    margin-bottom: 30px;
+}
+
+/* 搜索容器样式：包含搜索输入框和按钮 */
+.search-container {
+    /* 设置为弹性布局：使子元素可以灵活排列 */
+    display: flex;
+    /* 设置子元素间距：10像素 */
+    gap: 10px;
+    /* 允许子元素换行：在空间不足时自动换行 */
+    flex-wrap: wrap;
+}
+
+/* 搜索输入框样式 */
+.search-input {
+    /* 设置弹性增长：1表示占据剩余空间 */
+    flex: 1;
+    /* 设置最小宽度：300像素，确保输入框不会太小 */
+    min-width: 300px;
+    /* 设置内边距：上下12像素，左右15像素 */
+    padding: 12px 15px;
+    /* 设置边框：2像素宽的浅灰色边框 */
+    border: 2px solid #e0e0e0;
+    /* 设置圆角：5像素 */
+    border-radius: 5px;
+    /* 设置字体大小：16像素 */
+    font-size: 16px;
+    /* 设置过渡效果：边框颜色变化时的过渡时间为0.3秒 */
+    transition: border-color 0.3s;
+}
+
+/* 搜索输入框获得焦点时的样式 */
+.search-input:focus {
+    /* 移除默认的轮廓线 */
+    outline: none;
+    /* 更改边框颜色：使用主题色 */
+    border-color: #667eea;
+}
+
+/* 搜索按钮样式 */
+.search-btn {
+    /* 设置内边距：上下12像素，左右30像素 */
+    padding: 12px 30px;
+    /* 设置背景颜色：主题色 */
+    background: #667eea;
+    /* 设置文本颜色：白色 */
+    color: white;
+    /* 移除边框 */
+    border: none;
+    /* 设置圆角：5像素 */
+    border-radius: 5px;
+    /* 设置字体大小：16像素 */
+    font-size: 16px;
+    /* 设置光标：指针形状，表明可点击 */
+    cursor: pointer;
+    /* 设置过渡效果：背景颜色变化时的过渡时间为0.3秒 */
+    transition: background-color 0.3s;
+}
+
+/* 搜索按钮悬停时的样式 */
+.search-btn:hover {
+    /* 更改背景颜色：稍深的主题色 */
+    background: #5a6fd8;
+}
+
+/* 筛选容器样式：包含多个筛选选项 */
+.filter-container {
+    /* 设置顶部外边距：20像素 */
+    margin-top: 20px;
+    /* 设置为弹性布局 */
+    display: flex;
+    /* 设置子元素间距：15像素 */
+    gap: 15px;
+    /* 允许子元素换行 */
+    flex-wrap: wrap;
+}
+
+/* 筛选组样式：每个筛选选项的容器 */
+.filter-group {
+    /* 设置为弹性布局 */
+    display: flex;
+    /* 垂直对齐：居中 */
+    align-items: center;
+    /* 设置子元素间距：5像素 */
+    gap: 5px;
+}
+
+/* 筛选组标签样式 */
+.filter-group label {
+    /* 设置字体权重：500（中等粗细） */
+    font-weight: 500;
+    /* 设置文本颜色：深灰色 */
+    color: #666;
+}
+
+/* 筛选选择框样式 */
+.filter-select {
+    /* 设置内边距：上下8像素，左右12像素 */
+    padding: 8px 12px;
+    /* 设置边框：1像素宽的浅灰色边框 */
+    border: 1px solid #e0e0e0;
+    /* 设置圆角：4像素 */
+    border-radius: 4px;
+    /* 设置字体大小：14像素 */
+    font-size: 14px;
+}
+
+/* 标准列表区域样式 */
+.standards-section {
+    /* 设置底部外边距：30像素 */
+    margin-bottom: 30px;
+}
+
+/* 区域标题样式 */
+.section-title {
+    /* 设置字体大小：1.8rem */
+    font-size: 1.8rem;
+    /* 设置底部外边距：20像素 */
+    margin-bottom: 20px;
+    /* 设置文本颜色：深灰色 */
+    color: #333;
+    /* 设置底部内边距：10像素 */
+    padding-bottom: 10px;
+    /* 设置底部边框：2像素宽的主题色边框 */
+    border-bottom: 2px solid #667eea;
+}
+
+/* 标准网格样式：使用CSS Grid布局 */
+.standards-grid {
+    /* 设置为网格布局 */
+    display: grid;
+    /* 设置列模板：自动填充，最小宽度350像素，每列等宽 */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    /* 设置网格间距：20像素 */
+    gap: 20px;
+}
+
+/* 标准卡片样式：每个标准的卡片 */
+.standard-card {
+    /* 设置背景颜色：白色 */
+    background: white;
+    /* 设置圆角：10像素 */
+    border-radius: 10px;
+    /* 设置内边距：上下20像素，左右20像素，底部增加内边距为按钮留出空间 */
+    padding: 20px 20px 60px;
+    /* 设置阴影：轻微阴影效果 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* 设置过渡效果：变换和阴影变化时的过渡时间为0.3秒 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* 设置为相对定位，使按钮可以相对于卡片绝对定位 */
+    position: relative;
+}
+
+/* 标准卡片悬停时的样式 */
+.standard-card:hover {
+    /* 变换：向上移动5像素 */
+    transform: translateY(-5px);
+    /* 阴影：增加阴影效果，增强立体感 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 标准标题样式 */
+.standard-title {
+    /* 设置字体大小：1.2rem */
+    font-size: 1.2rem;
+    /* 设置字体权重：600（半粗体） */
+    font-weight: 600;
+    /* 设置底部外边距：10像素 */
+    margin-bottom: 10px;
+    /* 设置文本颜色：深灰色 */
+    color: #333;
+}
+
+/* 标准信息样式：包含标准的基本信息 */
+.standard-info {
+    /* 设置底部外边距：15像素 */
+    margin-bottom: 15px;
+}
+
+/* 信息项样式：每个信息行 */
+.info-item {
+    /* 设置底部外边距：5像素 */
+    margin-bottom: 5px;
+    /* 设置字体大小：14像素 */
+    font-size: 14px;
+    /* 设置文本颜色：中灰色 */
+    color: #666;
+}
+
+/* 信息标签样式：信息项的标签部分 */
+.info-label {
+    /* 设置字体权重：500（中等粗细） */
+    font-weight: 500;
+    /* 设置文本颜色：深灰色 */
+    color: #555;
+}
+
+/* 标准描述样式：标准的简短描述 */
+.standard-desc {
+    /* 设置字体大小：14像素 */
+    font-size: 14px;
+    /* 设置行高：1.5倍 */
+    line-height: 1.5;
+    /* 设置文本颜色：中灰色 */
+    color: #666;
+    /* 设置底部外边距：15像素 */
+    margin-bottom: 15px;
+}
+
+/* 查看按钮样式：查看标准详情的按钮 */
+.view-btn {
+    /* 显示为行内块元素：既可以设置宽高，又可以像文本一样排列 */
+    display: inline-block;
+    /* 设置内边距：上下8像素，左右20像素 */
+    padding: 8px 20px;
+    /* 设置背景颜色：深紫色 */
+    background: #764ba2;
+    /* 设置文本颜色：白色 */
+    color: white;
+    /* 移除文本装饰：无下划线 */
+    text-decoration: none;
+    /* 设置圆角：4像素 */
+    border-radius: 4px;
+    /* 设置字体大小：14像素 */
+    font-size: 14px;
+    /* 设置过渡效果：背景颜色变化时的过渡时间为0.3秒 */
+    transition: background-color 0.3s;
+}
+
+/* 卡片中的查看按钮样式：固定在卡片左下角 */
+.standard-card .view-btn {
+    /* 设置为绝对定位，固定在卡片左下角 */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* 查看按钮悬停时的样式 */
+.view-btn:hover {
+    /* 更改背景颜色：稍深的紫色 */
+    background: #663a8a;
+}
+
+/* 模态框样式：显示标准详情的弹窗 */
+.modal {
+    /* 默认显示：隐藏 */
+    display: none;
+    /* 定位方式：固定定位，相对于浏览器窗口 */
+    position: fixed;
+    /* 层级：1000，确保在最上层显示 */
+    z-index: 1000;
+    /* 左边距：0 */
+    left: 0;
+    /* 上边距：0 */
+    top: 0;
+    /* 宽度：100% */
+    width: 100%;
+    /* 高度：100% */
+    height: 100%;
+    /* 溢出：自动，允许滚动 */
+    overflow: auto;
+    /* 背景颜色：半透明黑色 */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 模态框内容样式：弹窗的主体部分 */
+.modal-content {
+    /* 背景颜色：白色 */
+    background-color: white;
+    /* 外边距：顶部10%，左右自动 */
+    margin: 10% auto;
+    /* 内边距：30像素 */
+    padding: 30px;
+    /* 圆角：10像素 */
+    border-radius: 10px;
+    /* 宽度：80% */
+    width: 80%;
+    /* 最大宽度：800像素 */
+    max-width: 800px;
+    /* 阴影：较明显的阴影效果 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 关闭按钮样式：模态框的关闭按钮 */
+.close {
+    /* 文本颜色：浅灰色 */
+    color: #aaa;
+    /* 浮动：右对齐 */
+    float: right;
+    /* 字体大小：28像素 */
+    font-size: 28px;
+    /* 字体权重：粗体 */
+    font-weight: bold;
+    /* 光标：指针形状 */
+    cursor: pointer;
+}
+
+/* 关闭按钮悬停时的样式 */
+.close:hover {
+    /* 文本颜色：深灰色 */
+    color: #333;
+}
+
+/* 模态框标题样式 */
+.modal-title {
+    /* 字体大小：1.5rem */
+    font-size: 1.5rem;
+    /* 底部外边距：20像素 */
+    margin-bottom: 20px;
+    /* 文本颜色：深灰色 */
+    color: #333;
+}
+
+/* 模态框信息样式：包含标准的详细信息 */
+.modal-info {
+    /* 底部外边距：20像素 */
+    margin-bottom: 20px;
+}
+
+/* 模态框描述样式：标准的详细描述 */
+.modal-desc {
+    /* 行高：1.6倍 */
+    line-height: 1.6;
+    /* 文本颜色：中灰色 */
+    color: #666;
+}
+
+/* 页脚样式：页面底部的信息 */
+footer {
+    /* 背景颜色：深灰色 */
+    background: #333;
+    /* 文本颜色：白色 */
+    color: white;
+    /* 内边距：上下30像素，左右0 */
+    padding: 30px 0;
+    /* 文本对齐：居中 */
+    text-align: center;
+    /* 圆角：10像素 */
+    border-radius: 10px;
+}
+
+/* 页脚内容样式：限制页脚内容的最大宽度并居中 */
+.footer-content {
+    /* 最大宽度：1200像素 */
+    max-width: 1200px;
+    /* 水平居中 */
+    margin: 0 auto;
+    /* 内边距：左右20像素 */
+    padding: 0 20px;
+    /* 相对定位，使签名可以绝对定位 */
+    position: relative;
+}
+
+/* 作者签名样式 */
+.author-signature {
+    /* 绝对定位，固定在右下角 */
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    /* 缩小文字 */
+    font-size: 11px;
+    /* 文字颜色：浅灰色 */
+    color: #aaa;
+    /* 字体样式：斜体 */
+    font-style: italic;
+    /* 字间距：稍微增加，使文字更优雅 */
+    letter-spacing: 1px;
+    /* 过渡效果：鼠标悬停时的变化 */
+    transition: all 0.3s ease;
+    /* 内边距：右侧20px，为装饰元素留出空间 */
+    padding-right: 25px;
+}
+
+/* 作者签名前的装饰点 */
+.author-signature::before {
+    /* 伪元素：创建装饰点 */
+    content: '';
+    /* 绝对定位 */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    /* 变换：垂直居中 */
+    transform: translateY(-50%);
+    /* 宽度和高度 */
+    width: 4px;
+    height: 4px;
+    /* 圆形 */
+    border-radius: 50%;
+    /* 背景颜色：浅灰色 */
+    background: #ccc;
+    /* 过渡效果 */
+    transition: all 0.3s ease;
+}
+
+/* 作者签名悬停效果 */
+.author-signature:hover {
+    /* 文字颜色：深灰色 */
+    color: #666;
+    /* 字体大小：稍微增大 */
+    font-size: 12px;
+}
+
+/* 作者签名悬停时装饰点的效果 */
+.author-signature:hover::before {
+    /* 背景颜色：主题色 */
+    background: #667eea;
+    /* 尺寸增大 */
+    width: 6px;
+    height: 6px;
+}
+
+/* 隐藏按钮容器：固定在右下角，作为触发区域 */
+.hidden-button-container {
+    /* 定位：固定在右下角 */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    /* 宽度和高度：设置一个很小的区域 */
+    width: 50px;
+    height: 50px;
+    /* 层级：999，确保在其他元素之上 */
+    z-index: 999;
+}
+
+/* 隐藏按钮样式：平时隐藏，鼠标进入容器时显示 */
+.hidden-button {
+    /* 定位：相对于容器定位 */
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    /* 背景颜色：完全透明，融入背景 */
+    background: transparent;
+    /* 文本颜色：极浅灰色，几乎与背景融为一体 */
+    color: #ccc;
+    /* 内边距：上下3像素，左右8像素 */
+    padding: 3px 8px;
+    /* 无圆角，完全矩形 */
+    border-radius: 0;
+    /* 字体大小：9像素，极小 */
+    font-size: 9px;
+    /* 字体权重：300（轻量级） */
+    font-weight: 300;
+    /* 透明度：0，完全透明 */
+    opacity: 0;
+    /* 指针事件：none，不响应鼠标事件 */
+    pointer-events: none;
+    /* 过渡效果：仅透明度变化，非常低调 */
+    transition: opacity 0.3s ease;
+    /* 无边框，完全融入背景 */
+    border: none;
+    /* 无阴影 */
+    box-shadow: none;
+    /* 文本对齐：居中 */
+    text-align: center;
+}
+
+/* 鼠标进入容器时显示按钮 */
+.hidden-button-container:hover .hidden-button {
+    /* 透明度：0.6，半透明，非常低调 */
+    opacity: 0.6;
+    /* 指针事件：auto，响应鼠标事件 */
+    pointer-events: auto;
+    /* 无变换，保持静态 */
+    transform: none;
+    /* 无阴影 */
+    box-shadow: none;
+}
+
+/* 媒体查询：针对屏幕宽度小于768像素的设备 */
+@media (max-width: 768px) {
+    /* 调整主标题字体大小 */
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* 调整搜索容器为垂直布局 */
+    .search-container {
+        flex-direction: column;
+    }
+
+    /* 调整搜索输入框宽度为100% */
+    .search-input {
+        width: 100%;
+    }
+
+    /* 调整筛选容器为垂直布局，左对齐 */
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* 调整标准网格为单列布局 */
+    .standards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 调整模态框宽度为95%，顶部外边距为20% */
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- HTML文档声明：告诉浏览器这是一个HTML5文档 -->
+<html lang="zh-CN">
+<!-- lang="zh-CN"：指定文档语言为中文，有助于搜索引擎和屏幕阅读器理解内容 -->
+
+<head>
+    <!-- 字符集声明：指定文档使用UTF-8字符编码，支持中文等多语言 -->
+    <meta charset="UTF-8">
+    <!-- 兼容性声明：告诉IE浏览器使用最新的渲染模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口设置：控制页面在移动设备上的显示方式，width=device-width表示宽度与设备一致，initial-scale=1.0表示初始缩放比例为1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题：显示在浏览器标签栏上 -->
+    <title>电缆标准查询系统</title>
+    <!-- 引入外部CSS样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 头部区域：包含页面标题和副标题 -->
+    <header>
+        <div class="header-content">
+            <h1>电缆标准查询系统</h1>
+            <p class="subtitle">提供全面的电缆行业标准信息，助力产品质检与技术研发</p>
+        </div>
+    </header>
+
+    <!-- 容器区域：包含页面主要内容 -->
+    <div class="container">
+        <!-- 搜索和筛选部分：用户可以搜索和筛选标准 -->
+        <div class="search-section">
+            <div class="search-container">
+                <!-- 搜索输入框：用户输入搜索关键词 -->
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索标准编号、名称或关键词...">
+                <!-- 搜索按钮：点击触发搜索功能 -->
+                <button class="search-btn" onclick="searchStandards()">搜索</button>
+            </div>
+
+            <!-- 筛选容器：包含多个筛选选项 -->
+            <div class="filter-container">
+                <!-- 标准类型筛选 -->
+                <div class="filter-group">
+                    <label>标准类型：</label>
+                    <select class="filter-select" id="typeFilter">
+                        <option value="all">全部</option>
+                        <option value="national">国家标准</option>
+                        <option value="industry">行业标准</option>
+                        <option value="international">国际标准</option>
+                    </select>
+                </div>
+
+                <!-- 电压等级筛选 -->
+                <div class="filter-group">
+                    <label>电压等级：</label>
+                    <select class="filter-select" id="voltageFilter">
+                        <option value="all">全部</option>
+                        <option value="low">低压</option>
+                        <option value="medium">中压</option>
+                        <option value="high">高压</option>
+                        <option value="jk">架空</option>
+                        <option value="kz">控制</option>
+                    </select>
+                </div>
+
+                <!-- 发布年份筛选 -->
+                <div class="filter-group">
+                    <label>发布年份：</label>
+                    <select class="filter-select" id="yearFilter">
+                        <option value="all">全部</option>
+                        <option value="2020">2020年</option>
+                        <option value="2008">2008年</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 标准列表部分：显示搜索和筛选结果 -->
+        <div class="standards-section">
+            <h2 class="section-title">常用电缆标准</h2>
+            <!-- 标准网格：使用JavaScript动态生成标准卡片 -->
+            <div class="standards-grid" id="standardsGrid">
+                <!-- 标准卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 标准详情模态框：点击查看详情时显示 -->
+    <div id="standardModal" class="modal">
+        <div class="modal-content">
+            <!-- 关闭按钮 -->
+            <span class="close" onclick="closeModal()">&times;</span>
+            <!-- 模态框标题：显示标准编号和名称 -->
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <!-- 模态框信息：显示标准的详细信息 -->
+            <div class="modal-info" id="modalInfo"></div>
+            <!-- 模态框描述：显示标准的详细描述 -->
+            <div class="modal-desc" id="modalDesc"></div>
+        </div>
+    </div>
+
+    <!-- 页脚区域：包含版权信息 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 电缆标准查询系统 | 数据更新时间：2026-01-19</p>
+            <p>本系统仅供参考，具体标准内容请以官方发布为准</p>
+            <p>致青春</p>
+            <p class="author-signature">——Mr.Tian Hongkuan</p>
+        </div>
+        <!-- 隐藏按钮：鼠标悬停时显示 -->
+        <div class="hidden-button">致22岁</div>
+    </footer>
+    
+    <!-- 隐藏按钮容器：固定在右下角，鼠标悬停时显示按钮 -->
+    <div class="hidden-button-container">
+        <div class="hidden-button">致22岁</div>
+    </div>
+
+    <!-- 引入外部JavaScript脚本文件 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
